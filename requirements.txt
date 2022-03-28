@@ -1,4 +1,4 @@
-fastapi>=0.54.1
-mangum>=0.8.0
-pytest==6.0.1
-requests==2.24.0
+fastapi
+mangum
+pytest
+requests
