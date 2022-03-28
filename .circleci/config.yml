@@ -25,11 +25,11 @@ jobs:
       - run:
           name: Test
           command: pytest
-      # - run:
-      #     name: Create Zipfile archive of Dependencies
-      #     command: |
-      #       cd env/lib/python3.7/site-packages
-      #       zip -r9 ../../../../function.zip .
+      - run:
+          name: Create Zipfile archive of Dependencies
+          command: |
+            cd env/lib/python3.7/site-packages
+            zip -r9 ../../../../function.zip .
       - run:
           name: Add App to Zipfile
           command: cd ./app && zip -g ../function.zip -r .
