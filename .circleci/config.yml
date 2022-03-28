@@ -30,7 +30,7 @@ jobs:
           command: |
             cd env/lib/python3.7/site-packages
             zip -r9 ../../../../function.zip .
-      -run:
+      - run:
           name: path
           command: |
             cd ./app
