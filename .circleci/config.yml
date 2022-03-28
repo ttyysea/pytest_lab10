@@ -31,13 +31,8 @@ jobs:
             cd env/lib/python3.7/site-packages
             zip -r9 ../../../../function.zip .
       - run:
-          name: path
-          command: |
-            cd ./app
-            ls
-      - run:
           name: Add App to Zipfile
-          command: cd ./app & zip -g ../function.zip -r ./
+          command: cd ./app && zip -g ../function.zip -r .
       - persist_to_workspace:
           root: .
           paths:
