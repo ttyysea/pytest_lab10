@@ -25,11 +25,11 @@ jobs:
       - run:
           name: Test
           command: pytest
-      - run:
-          name: Create Zipfile archive of Dependencies
-          command: |
-            cd ./venv/lib/python3.7/site-packages
-            zip -r9 ../../../../function.zip .
+      # - run:
+      #     name: Create Zipfile archive of Dependencies
+      #     command: |
+      #       cd env/lib/python3.7/site-packages
+      #       zip -r9 ../../../../function.zip .
       - run:
           name: Add App to Zipfile
           command: cd ./app && zip -g ../function.zip -r .
@@ -42,7 +42,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - attach_workspace:
-          at: ./
+          at: ./tumtpk
       - aws-cli/setup:
           aws-region: AWS_DEFAULT_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
