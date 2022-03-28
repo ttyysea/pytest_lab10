@@ -1,15 +1,12 @@
+from mangum.platforms.aws.adapter import AWSLambdaAdapter
 from fastapi import FastAPI
-from mangum import Mangum
 
 app = FastAPI()
 
-handler = Mangum(app)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"hello": "world"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+handler = AWSLambdaAdapter(app)
