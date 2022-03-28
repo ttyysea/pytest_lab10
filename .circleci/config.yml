@@ -42,7 +42,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - attach_workspace:
-          at: ./tumtpk
+          at: ./
       - aws-cli/setup:
           aws-region: AWS_DEFAULT_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
